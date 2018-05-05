@@ -337,6 +337,8 @@ class Scratch3LooksBlocks {
             const costumeIndex = target.getCostumeIndexByName(requestedCostume);
             if (costumeIndex > -1) {
                 target.setCostume(costumeIndex);
+            } else if (requestedCostume === "RANDOM"){
+                target.setCostume(Math.floor(Math.random() * target.getCostumes().length));
             } else if (requestedCostume === 'previous costume' ||
                        requestedCostume === 'previous backdrop') {
                 target.setCostume(target.currentCostume - 1);
